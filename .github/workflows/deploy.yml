@@ -21,5 +21,8 @@ jobs:
         with:
           commit_message: 'chore: make deployment'
           branch: main
+          commit_user_name: Ming Tsai
+          commit_user_email: ming.jia1213@gmail.com
+          commit_author: Ming Tsai <ming.jia1213@gmail.com>
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
