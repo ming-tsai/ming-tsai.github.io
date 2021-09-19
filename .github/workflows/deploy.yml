@@ -1,0 +1,25 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.1
+      - run: npm ci
+      - run: npm run build:docs
+      - uses: stefanzweifel/git-auto-commit-action@v4.4.1
+        with:
+          commit_message: 'chore: make deployment'
+          branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
