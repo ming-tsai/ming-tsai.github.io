@@ -10,7 +10,7 @@
               src="../assets/images/pingueen.webp"
               width="50rem"
             />, I'm
-            <span class="text-color-main"><strong>Ming Tsai</strong> </span>
+            <span class="text-name"><strong>Ming Tsai</strong> </span>
           </h1>
           <h4 class="subheading">
             I'm working with
@@ -92,7 +92,7 @@ h4 {
   letter-spacing: 10px !important;
 }
 
-.text-color-main {
+.text-name {
   white-space: break-spaces;
   background-image: linear-gradient(139deg, #167df0, red);
   background-clip: text;
