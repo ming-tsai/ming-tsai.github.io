@@ -21,3 +21,7 @@ export default {
   }),
 };
 </script>
+
+<style>
+@import url("./assets/main.css");
+</style>

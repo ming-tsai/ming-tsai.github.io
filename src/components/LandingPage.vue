@@ -14,12 +14,12 @@
           </h1>
           <h4 class="subheading">
             I'm working with
-            <v-fade-transition leave-absolute mode="in-out">
+            <transition name="fade" appear>
               <span id="work" v-if="show">{{ works[index] }}</span>
               <span v-else
                 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
               >
-            </v-fade-transition>
+            </transition>
           </h4>
         </v-col>
         <v-col cols="12">
@@ -80,6 +80,12 @@ div.v-parallax {
 
 #work {
   color: #fff603;
+  display: inline;
+  position: relative;
+  top: 0px;
+  animation: fade-in 5s;
+  margin: 0 auto;
+  width: 100%;
 }
 
 h4 {
