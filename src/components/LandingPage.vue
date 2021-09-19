@@ -83,7 +83,7 @@ div.v-parallax {
   display: inline;
   position: relative;
   top: 0px;
-  animation: fade-in 5s;
+  animation: fade-in-out 5s;
   margin: 0 auto;
   width: 100%;
 }
