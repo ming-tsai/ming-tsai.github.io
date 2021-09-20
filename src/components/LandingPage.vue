@@ -18,18 +18,7 @@
           </h4>
         </v-col>
         <v-col class="text-sm-left text-center" cols="12">
-          <v-btn
-            v-for="media in medias"
-            :key="media.icon"
-            class="white--text"
-            icon
-            :href="media.link"
-            target="_blank noopener"
-          >
-            <v-icon>
-              {{ media.icon }}
-            </v-icon>
-          </v-btn>
+          <user-medias />
         </v-col>
       </v-row>
     </v-container>
@@ -37,17 +26,18 @@
 </template>
 
 <script>
+import { MEDIAS } from "@/utils/consts.js";
+import UserMedias from './UserMedias.vue';
+
 export default {
+  components: { UserMedias },
   name: "LandingPage",
   data: () => ({
     status: ["Web Developer", "Scrum Master"],
     show: true,
     index: 0,
     interval: null,
-    medias: [
-      { link: "https://github.com/ming-tsai", icon: "mdi-github" },
-      { link: "https://linkedin.com/in/ming-tsai", icon: "mdi-linkedin" },
-    ],
+    medias: MEDIAS,
   }),
   computed: {
     letterSpacing() {
@@ -107,6 +97,4 @@ div.v-parallax {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 </style>
