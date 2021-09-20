@@ -1,9 +1,9 @@
 <template>
   <v-parallax src="../assets/images/background.gif" height="100%">
-    <v-container>
+    <v-container style="padding: 10%">
       <v-row align="center" justify="center">
         <v-col cols="12">
-          <h1 class="text-h3 mb-4">
+          <h1 class="text-lg-h1 text-h3 mb-4">
             Hiya
             <img
               align="center"
@@ -12,13 +12,13 @@
             />, I'm
             <span class="text-name"><strong>Ming Tsai</strong> </span>
           </h1>
-          <h4 class="subheading">
-            I'm working with
-            <transition name="fade" appear>
-              <span id="work" v-if="show">{{ works[index] }}</span>
-              <span v-else
-                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-              >
+          <h4
+            class="subheading text-lg-h2"
+            style="letter-spacing: 10px !important"
+          >
+            I'm
+            <transition>
+              <span id="work" v-if="show">{{ status[index] }}</span>
             </transition>
           </h4>
         </v-col>
@@ -45,7 +45,7 @@
 export default {
   name: "LandingPage",
   data: () => ({
-    works: ["Frontend", "Backend", "CD/CI"],
+    status: ["Web Developer", "Scrum Master"],
     show: true,
     index: 0,
     interval: null,
@@ -58,12 +58,12 @@ export default {
     this.interval = setInterval(() => {
       this.show = false;
       this.index++;
-      if (this.index >= this.works.length) {
+      if (this.index >= this.status.length) {
         this.index = 0;
       }
       setTimeout(() => {
         this.show = true;
-      }, 1000);
+      }, 500);
     }, 5000);
   },
   destroyed() {
@@ -86,10 +86,6 @@ div.v-parallax {
   animation: fade-in-out 5s;
   margin: 0 auto;
   width: 100%;
-}
-
-h4 {
-  letter-spacing: 10px !important;
 }
 
 .text-name {
