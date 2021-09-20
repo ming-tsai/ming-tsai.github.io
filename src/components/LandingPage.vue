@@ -3,26 +3,21 @@
     <v-container style="padding: 10%">
       <v-row align="center" justify="center">
         <v-col cols="12">
-          <h1 class="text-lg-h1 text-h3 mb-4">
-            Hiya
-            <img
-              align="center"
-              src="../assets/images/pingueen.webp"
-              width="50rem"
-            />, I'm
-            <span class="text-name"><strong>Ming Tsai</strong> </span>
+          <h1 class="text-xl-h1 text-lg-h2 text-h3 mb-4">
+            Hiya 👋, I'm
+            <span class="text-name font-weight-bold">Ming Tsai</span>
           </h1>
           <h4
-            class="subheading text-lg-h2"
-            style="letter-spacing: 10px !important"
+            class="subheading text-xl-h2 text-lg-h4"
+            :style="`letter-spacing: ${letterSpacing} !important`"
           >
             I'm
             <transition>
-              <span id="work" v-if="show">{{ status[index] }}</span>
+              <span id="status" v-if="show">{{ status[index] }}</span>
             </transition>
           </h4>
         </v-col>
-        <v-col cols="12">
+        <v-col class="text-sm-left text-center" cols="12">
           <v-btn
             v-for="media in medias"
             :key="media.icon"
@@ -54,6 +49,24 @@ export default {
       { link: "https://linkedin.com/in/ming-tsai", icon: "mdi-linkedin" },
     ],
   }),
+  computed: {
+    letterSpacing() {
+      let result = "12px";
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+        case "sm":
+          result = "7px";
+          break;
+        case "md":
+        case "lg":
+          result = "10px";
+          break;
+        default:
+          break;
+      }
+      return result;
+    },
+  },
   created() {
     this.interval = setInterval(() => {
       this.show = false;
@@ -78,7 +91,7 @@ div.v-parallax {
   opacity: 0.75;
 }
 
-#work {
+#status {
   color: #fff603;
   display: inline;
   position: relative;
@@ -94,4 +107,6 @@ div.v-parallax {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
 </style>
