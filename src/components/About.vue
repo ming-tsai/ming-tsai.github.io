@@ -26,14 +26,14 @@
               and always strive to write elegant, efficient, and testable code.
             </span>
           </p>
-          <div>
-            <p class="text-justify subtitle-1 font-weight-medium">Languages:</p>
-            <languages id="languages" />
+          <div id="languages">
+            <languages />
           </div>
           <br >
           <div class="text-sm-left text-center">
             <v-btn
               outlined
+              :block="$vuetify.breakpoint.xsOnly"
               color="primary"
               href="https://github.com/ming-tsai/ming-tsai/raw/master/docs/curriculum_ming.pdf"
             >

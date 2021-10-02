@@ -1,11 +1,12 @@
 <template>
   <div>
+    <p class="text-justify subtitle-1 font-weight-medium">Languages:</p>
     <div v-for="language in languages" :key="language.name">
       <p class="text-justify">
-        <span class="subtitle-1 font-weight-medium">
+        <span class="subtitle-1 font-weight-regular">
           {{ language.name }}
         </span>
-        <span class="body-2"> ({{ language.value }}) </span>
+        <span class="body-2 font-weight-light"> ({{ language.value }}) </span>
       </p>
     </div>
   </div>
@@ -32,3 +33,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.v-application .text-justify {
+  margin-bottom: 0%;
+}
+</style>
