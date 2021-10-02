@@ -1,13 +1,17 @@
 <template>
   <v-app>
     <v-main>
-      <landing-page id="landing" />
-      <app-footer id="footer" />
+      <div>
+        <landing-page id="home" />
+        <about id="about" />
+      </div>
     </v-main>
+    <app-footer id="footer" />
   </v-app>
 </template>
 
 <script>
+import About from "./components/About.vue";
 import AppFooter from "./components/AppFooter.vue";
 import LandingPage from "./components/LandingPage.vue";
 
@@ -16,6 +20,7 @@ export default {
 
   components: {
     LandingPage,
+    About,
     AppFooter,
   },
 

@@ -27,6 +27,6 @@ export default {
 <style scoped>
 footer div {
   width: 100% !important;
-  background-color: #424242 !important;
+  background-color: #525159 !important;
 }
 </style>

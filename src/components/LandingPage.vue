@@ -27,7 +27,7 @@
 
 <script>
 import { MEDIAS } from "@/utils/consts.js";
-import UserMedias from './UserMedias.vue';
+import UserMedias from "./UserMedias.vue";
 
 export default {
   components: { UserMedias },
@@ -77,7 +77,7 @@ export default {
 
 <style scoped>
 div.v-parallax {
-  height: 100%;
+  height: 100vh;
   opacity: 0.75;
 }
 
