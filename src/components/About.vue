@@ -1,12 +1,14 @@
 <template>
-  <v-container class="about-container">
-    <h3 class="text-center">ABOUT ME</h3>
-    <p class="text-center subtitle-2">
-      <em>eat(); sleep(); code(); repeat();</em>
-    </p>
+  <v-container class="about-container" fill-height fluid>
     <v-row align="center" justify="center">
+      <v-col cols="12">
+        <h3 class="text-center">ABOUT ME</h3>
+        <p class="text-center subtitle-2">
+          <em>eat(); sleep(); code(); repeat();</em>
+        </p>
+      </v-col>
       <v-col sm="6" align="center" justify="center">
-        <v-avatar size="300" class="profile">
+        <v-avatar :size="avatarSize" class="profile">
           <v-img src="../assets/images/profile.jpg" alt="Ming Tsai" />
         </v-avatar>
       </v-col>
@@ -44,6 +46,26 @@
 <script>
 export default {
   name: "About",
+  computed: {
+    avatarSize() {
+      let result = "300";
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+        case "sm":
+          result = "200";
+          break;
+        case "md":
+          result = "230";
+          break;
+        case "lg":
+          result = "250";
+          break;
+        default:
+          break;
+      }
+      return result;
+    },
+  },
 };
 </script>
 
