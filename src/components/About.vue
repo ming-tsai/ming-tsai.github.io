@@ -26,6 +26,11 @@
               and always strive to write elegant, efficient, and testable code.
             </span>
           </p>
+          <div>
+            <p class="text-justify subtitle-1 font-weight-medium">Languages:</p>
+            <languages id="languages" />
+          </div>
+          <br >
           <div class="text-sm-left text-center">
             <v-btn
               outlined
@@ -44,7 +49,9 @@
 
 
 <script>
+import Languages from "./Languages.vue";
 export default {
+  components: { Languages },
   name: "About",
   computed: {
     avatarSize() {
